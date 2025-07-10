@@ -1,0 +1,32 @@
+{
+  "name": "secondhandhub_api",
+  "version": "1.0.0",
+  "description": "API REST for project \"Second Hand Hub\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alegarse/SecondHandHub_Backend.git"
+  },
+  "author": "Alejandro García Serrano",
+  "license": "SEE LICENSE IN <LICENSE>",
+  "bugs": {
+    "url": "https://github.com/Alegarse/SecondHandHub_Backend/issues"
+  },
+  "homepage": "https://github.com/Alegarse/SecondHandHub_Backend#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.2",
+    "nodemailer": "^7.0.5"
+  }
+}
