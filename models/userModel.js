@@ -63,6 +63,16 @@ const userSchema = new Schema(
         city: String,
       },
     },
+    averageRating: {
+        type: Number,
+        min: 0,
+        max: 5,
+        default: 0,
+    },
+    reviewCount: {
+        type: Number,
+        default: 0,
+    },
     lastAccess: {
       type: Date,
       default: Date.now,
