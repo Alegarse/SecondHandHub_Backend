@@ -35,10 +35,16 @@ const reviewSchema = new Schema(
   }
 );
 
-reviewSchema.index({ from: 1, produt: 1 }, { unique: true });
+reviewSchema.index({ from: 1, product: 1 }, { unique: true });
+
+reviewSchema.pre("save", function (next) {
+  if (this.from.equals(this.to)) {
+    return next(new Error("User can not review themselves"));
+  }
+  next();
+});
 
 reviewSchema.post("save", async function () {
-
   const Review = this.constructor;
   const reviews = await Review.find({ to: this.to });
   const total = reviews.reduce((sum, rev) => sum + rev.rating, 0);
@@ -48,7 +54,6 @@ reviewSchema.post("save", async function () {
     averageRating: average,
     reviewCount: reviews.length,
   });
-  
 });
 
 const reviewModel = mongoose.model("Review", reviewSchema, "reviews");

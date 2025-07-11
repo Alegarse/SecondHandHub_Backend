@@ -34,18 +34,18 @@ const userSchema = new Schema(
     dni: {
       type: String,
     },
-    products: {
-      type: [mongoose.Schema.Types.ObjectId],
+    products: [{
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Product",
-    },
-    favourites: {
-      type: [mongoose.Schema.Types.ObjectId],
+    }],
+    favourites: [{
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Product",
-    },
-    chats: {
-      type: [mongoose.Schema.Types.ObjectId],
+    }],
+    chats: [{
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Chat",
-    },
+    }],
     location: {
       type: {
         type: String,
