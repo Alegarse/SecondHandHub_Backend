@@ -110,7 +110,24 @@ const login = async (req,res) => {
 
 }
 
+const getTokens = (req, res) => {
+  try {
+    const payload = {
+      _id: req.payload._id,
+      name: req.payload.name,
+    };
+
+    const token = generateSecureToken(payload, false);
+    const token_refresh = generateSecureToken(payload, true);
+
+    res.status(200).send({ status: "Success", token, token_refresh });
+  } catch (error) {
+    res.status(500).send({ status: "Failed", error: error.message });
+  }
+};
+
 module.exports = {
   signup,
-  login
+  login,
+  getTokens
 };
