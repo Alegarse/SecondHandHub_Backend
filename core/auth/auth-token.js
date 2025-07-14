@@ -10,8 +10,8 @@ const generateSecureToken = (payload, isRefreshToken) => {
 };
 
 const verifyValidToken = (req, res, next) => {
+  const token = req.header('auth-token');
   try {
-    const token = req.header('auth-token');
     if (!token) return res.status(401).send('Unauthorized access');
     const payload = jwt.verify(token, process.env.SECRET_TOKEN);
     req.payload = payload;
