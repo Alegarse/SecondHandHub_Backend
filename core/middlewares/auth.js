@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const { getOwnerByProductId } = require('../utils/functions');
 
 const verifyValidToken = (req, res, next) => {
   const token = req.header('auth-token');
@@ -18,4 +19,37 @@ const verifyValidToken = (req, res, next) => {
   }
 };
 
-module.exports = { verifyValidToken };
+const verifyOwner = (req, res, next) => {
+  const token = req.header("auth-token");
+  const { idProduct } = req.params;
+  const idOwnerByIdProduct = getOwnerByProductId(idProduct)
+  try {
+    const payload = jwt.verify(token, process.env.SECRET_TOKEN);
+    const idOwner = payload._id;
+    req.payload = payload;
+    if (idOwner !== idOwnerByIdProduct) {
+      return res
+        .status(401)
+        .send("Access allowed only to the product owner");
+    }
+    next();
+  } catch (error) {
+    try {
+      const payload = jwt.verify(token, process.env.SECRET_TOKEN_REFRESH);
+      const idOwner = payload._id;
+      req.payload = payload;
+      if (idOwner !== idOwnerByIdProduct) {
+      return res
+        .status(401)
+        .send("Access allowed only to the product owner");
+    }
+      next();
+    } catch (error) {
+      res
+        .status(401)
+        .send({ status: "Token has expired", error: error.message });
+    }
+  }
+};
+
+module.exports = { verifyValidToken, verifyOwner };

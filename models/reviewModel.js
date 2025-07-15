@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const userModel = require("./userModel");
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema(
@@ -50,7 +51,7 @@ reviewSchema.post("save", async function () {
   const total = reviews.reduce((sum, rev) => sum + rev.rating, 0);
   const average = reviews.length > 0 ? total / reviews.length : 0;
 
-  await mongoose.model("User").findByIdAndUpdate(this.to, {
+  await userModel.findByIdAndUpdate(this.to, {
     averageRating: average,
     reviewCount: reviews.length,
   });

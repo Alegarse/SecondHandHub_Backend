@@ -45,7 +45,7 @@ const userSchema = new Schema(
         ref: "Product",
       },
     ],
-    favourites: [
+    favorites: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Product",
