@@ -1,5 +1,16 @@
 const productModel = require("../models/productModel");
 const userModel = require("../models/userModel");
+const { mockProducts } = require("../utils/mockData");
+
+const insertInitialProducts = async () => {
+  try {
+    await productModel.insertMany(mockProducts);
+    console.log("Products inserted successfully");
+  } catch (error) {
+    console.error(`Products insert failed: ${error.message}`);
+
+  }
+};
 
 const getAllProducts = async (req, res) => {
   try {
@@ -85,6 +96,7 @@ const deleteProductById = async (req, res) => {
 };
 
 module.exports = {
+  insertInitialProducts,
   getAllProducts,
   addProduct,
   getProductById,
