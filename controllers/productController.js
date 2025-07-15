@@ -1,8 +1,7 @@
 const productModel = require("../models/productModel");
 const userModel = require("../models/userModel");
-const { mockProducts } = require("../utils/mockData");
 
-const insertInitialProducts = async () => {
+async function insertInitialProducts(mockProducts) {
   try {
     await productModel.insertMany(mockProducts);
     console.log("Products inserted successfully");

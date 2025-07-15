@@ -9,7 +9,7 @@ const connectToDatabase = async () => {
     .connect(URI_MONGODB)
     .then(async () => {
       console.log("Successfully connected to MongoDB");
-      await createInitialContent();
+      createInitialContent();
     })
     .catch((error) => console.error(`MongoDb connection error: ${error}`));
 };

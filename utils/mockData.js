@@ -1,5 +1,5 @@
 //MOCK DATA IA GENERATED
-
+const initialConfigModel = require("../models/initialConfigModel");
 const { insertInitialProducts } = require("../controllers/productController");
 
 const mockProducts = [
@@ -11,7 +11,7 @@ const mockProducts = [
     category: "Technology",
     condition: "Like new",
     brand: "Apple",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.70379, 40.41678],
@@ -33,7 +33,7 @@ const mockProducts = [
     category: "Home and garden",
     condition: "Good condition",
     brand: "IKEA",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.376288, 39.469907],
@@ -55,7 +55,7 @@ const mockProducts = [
     category: "Bicycles",
     condition: "Good condition",
     brand: "Rockrider",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-1.130654, 37.98704],
@@ -77,7 +77,7 @@ const mockProducts = [
     category: "Music, books and movies",
     condition: "Good condition",
     brand: "Varios",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-5.984459, 37.389092],
@@ -99,7 +99,7 @@ const mockProducts = [
     category: "Appliances",
     condition: "Acceptable",
     brand: "Balay",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-8.409798, 43.362343],
@@ -121,7 +121,7 @@ const mockProducts = [
     category: "Sport and leisure",
     condition: "Like new",
     brand: "Nike",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-4.421265, 36.721274],
@@ -144,7 +144,7 @@ const mockProducts = [
     category: "Home and garden",
     condition: "Good condition",
     brand: "Herman Miller",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.70379, 40.41678],
@@ -166,7 +166,7 @@ const mockProducts = [
     category: "Technology",
     condition: "In box",
     brand: "Sony",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.889085, 41.648823],
@@ -188,7 +188,7 @@ const mockProducts = [
     category: "Vehicle accessories",
     condition: "Good condition",
     brand: "HJC",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.70379, 40.41678],
@@ -210,7 +210,7 @@ const mockProducts = [
     category: "Real Estate",
     condition: "Good condition",
     brand: "",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-1.131592, 37.986179],
@@ -232,7 +232,7 @@ const mockProducts = [
     category: "Construction",
     condition: "Good condition",
     brand: "Bosch",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-1.867, 43.316],
@@ -254,7 +254,7 @@ const mockProducts = [
     category: "Children and babies",
     condition: "Like new",
     brand: "Chicco",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-4.1149, 43.4623],
@@ -277,7 +277,7 @@ const mockProducts = [
     category: "Music, books and movies",
     condition: "Good condition",
     brand: "Fender",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-6.3708, 39.4752],
@@ -299,7 +299,7 @@ const mockProducts = [
     category: "Technology",
     condition: "Like new",
     brand: "Lenovo",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-1.644, 42.818],
@@ -321,7 +321,7 @@ const mockProducts = [
     category: "Home and garden",
     condition: "Good condition",
     brand: "Conforama",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [2.1701, 41.3874],
@@ -343,7 +343,7 @@ const mockProducts = [
     category: "Technology",
     condition: "Like new",
     brand: "Samsung",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.612, 37.179],
@@ -365,7 +365,7 @@ const mockProducts = [
     category: "Technology",
     condition: "Good condition",
     brand: "Nikon",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.4815, 38.3452],
@@ -387,7 +387,7 @@ const mockProducts = [
     category: "Children and babies",
     condition: "Good condition",
     brand: "Jane",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-5.6635, 40.9701],
@@ -409,7 +409,7 @@ const mockProducts = [
     category: "Construction",
     condition: "Like new",
     brand: "Black+Decker",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-2.941, 43.262],
@@ -431,7 +431,7 @@ const mockProducts = [
     category: "Technology",
     condition: "Like new",
     brand: "JBL",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-6.9272, 38.8794],
@@ -453,7 +453,7 @@ const mockProducts = [
     category: "Bicycles",
     condition: "Good condition",
     brand: "Trek",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
@@ -475,7 +475,7 @@ const mockProducts = [
     category: "Home and garden",
     condition: "Like new",
     brand: "Ikea",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.8891, 41.651],
@@ -498,7 +498,7 @@ const mockProducts = [
     category: "Technology",
     condition: "Good condition",
     brand: "ASUS",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-4.4214, 36.7213],
@@ -520,7 +520,7 @@ const mockProducts = [
     category: "Music, books and movies",
     condition: "Good condition",
     brand: "Sony",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
@@ -542,7 +542,7 @@ const mockProducts = [
     category: "Technology",
     condition: "Like new",
     brand: "Fitbit",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-8.463, 42.8782],
@@ -564,7 +564,7 @@ const mockProducts = [
     category: "Construction",
     condition: "Well used",
     brand: "Stanley",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-5.9845, 37.3891],
@@ -587,7 +587,7 @@ const mockProducts = [
     category: "Vehicle accessories",
     condition: "Good condition",
     brand: "Xiaomi",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
@@ -609,7 +609,7 @@ const mockProducts = [
     category: "Technology",
     condition: "Good condition",
     brand: "GoPro",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-1.981, 37.988],
@@ -631,7 +631,7 @@ const mockProducts = [
     category: "Others",
     condition: "Like new",
     brand: "Seiko",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
@@ -653,7 +653,7 @@ const mockProducts = [
     category: "Home and garden",
     condition: "Good condition",
     brand: "Fiskars",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.627, 39.4699],
@@ -675,7 +675,7 @@ const mockProducts = [
     category: "Home and garden",
     condition: "Good condition",
     brand: "Ikea",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
@@ -697,7 +697,7 @@ const mockProducts = [
     category: "Technology",
     condition: "Good condition",
     brand: "HP",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.491, 39.864],
@@ -719,7 +719,7 @@ const mockProducts = [
     category: "Others",
     condition: "Like new",
     brand: "Zara",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-6.972, 37.382],
@@ -741,7 +741,7 @@ const mockProducts = [
     category: "Home and garden",
     condition: "Good condition",
     brand: "Herman Miller",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-4.4214, 36.7213],
@@ -763,7 +763,7 @@ const mockProducts = [
     category: "Sport and leisure",
     condition: "Like new",
     brand: "Logitech",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
@@ -785,7 +785,7 @@ const mockProducts = [
     category: "Appliances",
     condition: "Good condition",
     brand: "Samsung",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.627, 39.4699],
@@ -807,7 +807,7 @@ const mockProducts = [
     category: "Children and babies",
     condition: "Like new",
     brand: "Chicco",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
@@ -829,7 +829,7 @@ const mockProducts = [
     category: "Music, books and movies",
     condition: "Good condition",
     brand: "Yamaha",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-2.4597, 43.263],
@@ -851,7 +851,7 @@ const mockProducts = [
     category: "Sport and leisure",
     condition: "Good condition",
     brand: "Nike",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
@@ -873,7 +873,7 @@ const mockProducts = [
     category: "Construction",
     condition: "Good condition",
     brand: "Bosch",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.8891, 41.651],
@@ -887,19 +887,25 @@ const mockProducts = [
     status: "active",
     lastActivatedAt: new Date(),
   },
-    {
+  {
     title: "Bicicleta de montaña Trek Marlin 7",
-    description: "Bicicleta con cuadro de aluminio, 21 velocidades, frenos de disco.",
+    description:
+      "Bicicleta con cuadro de aluminio, 21 velocidades, frenos de disco.",
     price: 600,
     images: ["https://picsum.photos/id/1480/400/300"],
     category: "Bicycles",
     condition: "Good condition",
     brand: "Trek",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
-      address: { country: "España", region: "Comunidad de Madrid", province: "Madrid", city: "Madrid" }
+      address: {
+        country: "España",
+        region: "Comunidad de Madrid",
+        province: "Madrid",
+        city: "Madrid",
+      },
     },
     status: "active",
     lastActivatedAt: new Date(),
@@ -912,45 +918,62 @@ const mockProducts = [
     category: "Technology",
     condition: "Good condition",
     brand: "Samsung",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.3763, 39.4699],
-      address: { country: "España", region: "Comunidad Valenciana", province: "Valencia", city: "Valencia" }
+      address: {
+        country: "España",
+        region: "Comunidad Valenciana",
+        province: "Valencia",
+        city: "Valencia",
+      },
     },
     status: "active",
     lastActivatedAt: new Date(),
   },
   {
     title: "Set de herramientas manuales Stanley",
-    description: "Incluye destornilladores, alicates, martillo y llave inglesa.",
+    description:
+      "Incluye destornilladores, alicates, martillo y llave inglesa.",
     price: 65,
     images: ["https://picsum.photos/id/1500/400/300"],
     category: "Construction",
     condition: "Good condition",
     brand: "Stanley",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-8.417, 43.361],
-      address: { country: "España", region: "Galicia", province: "Pontevedra", city: "Vigo" }
+      address: {
+        country: "España",
+        region: "Galicia",
+        province: "Pontevedra",
+        city: "Vigo",
+      },
     },
     status: "active",
     lastActivatedAt: new Date(),
   },
   {
     title: "Juguete educativo para bebés",
-    description: "Bloques de construcción de madera pintados, aptos para niños de 1-3 años.",
+    description:
+      "Bloques de construcción de madera pintados, aptos para niños de 1-3 años.",
     price: 20,
     images: ["https://picsum.photos/id/1510/400/300"],
     category: "Children and babies",
     condition: "Brand new",
     brand: "Melissa & Doug",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
-      address: { country: "España", region: "Comunidad de Madrid", province: "Madrid", city: "Madrid" }
+      address: {
+        country: "España",
+        region: "Comunidad de Madrid",
+        province: "Madrid",
+        city: "Madrid",
+      },
     },
     status: "active",
     lastActivatedAt: new Date(),
@@ -963,11 +986,16 @@ const mockProducts = [
     category: "Technology",
     condition: "Like new",
     brand: "JBL",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-4.4214, 36.7213],
-      address: { country: "España", region: "Andalucía", province: "Málaga", city: "Málaga" }
+      address: {
+        country: "España",
+        region: "Andalucía",
+        province: "Málaga",
+        city: "Málaga",
+      },
     },
     status: "active",
     lastActivatedAt: new Date(),
@@ -980,28 +1008,39 @@ const mockProducts = [
     category: "Others",
     condition: "Good condition",
     brand: "Casio",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
-      address: { country: "España", region: "Comunidad de Madrid", province: "Madrid", city: "Madrid" }
+      address: {
+        country: "España",
+        region: "Comunidad de Madrid",
+        province: "Madrid",
+        city: "Madrid",
+      },
     },
     status: "active",
     lastActivatedAt: new Date(),
   },
   {
     title: "Sofá cama de dos plazas",
-    description: "Tapizado en tela gris, apertura fácil, ideal para espacios pequeños.",
+    description:
+      "Tapizado en tela gris, apertura fácil, ideal para espacios pequeños.",
     price: 180,
     images: ["https://picsum.photos/id/1540/400/300"],
     category: "Home and garden",
     condition: "Good condition",
     brand: "Conforama",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.491, 39.864],
-      address: { country: "España", region: "Comunidad Valenciana", province: "Castellón", city: "Castellón" }
+      address: {
+        country: "España",
+        region: "Comunidad Valenciana",
+        province: "Castellón",
+        city: "Castellón",
+      },
     },
     status: "active",
     lastActivatedAt: new Date(),
@@ -1014,28 +1053,39 @@ const mockProducts = [
     category: "Technology",
     condition: "Good condition",
     brand: "Nintendo",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-3.7038, 40.4168],
-      address: { country: "España", region: "Comunidad de Madrid", province: "Madrid", city: "Madrid" }
+      address: {
+        country: "España",
+        region: "Comunidad de Madrid",
+        province: "Madrid",
+        city: "Madrid",
+      },
     },
     status: "active",
     lastActivatedAt: new Date(),
   },
   {
     title: "Bicicleta de paseo Decathlon",
-    description: "Bicicleta urbana con cesta y guardabarros, ideal para ciudad.",
+    description:
+      "Bicicleta urbana con cesta y guardabarros, ideal para ciudad.",
     price: 150,
     images: ["https://picsum.photos/id/1560/400/300"],
     category: "Bicycles",
     condition: "Good condition",
     brand: "Btwin",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.627, 39.4699],
-      address: { country: "España", region: "Comunidad Valenciana", province: "Valencia", city: "Valencia" }
+      address: {
+        country: "España",
+        region: "Comunidad Valenciana",
+        province: "Valencia",
+        city: "Valencia",
+      },
     },
     status: "active",
     lastActivatedAt: new Date(),
@@ -1048,20 +1098,43 @@ const mockProducts = [
     category: "Appliances",
     condition: "Good condition",
     brand: "Bosch",
-    owner: '68763214f441dca9ebbf5369',
+    owner: "68763214f441dca9ebbf5369",
     location: {
       type: "Point",
       coordinates: [-0.8891, 41.651],
-      address: { country: "España", region: "Aragón", province: "Zaragoza", city: "Zaragoza" }
+      address: {
+        country: "España",
+        region: "Aragón",
+        province: "Zaragoza",
+        city: "Zaragoza",
+      },
     },
     status: "active",
     lastActivatedAt: new Date(),
-  }
-
+  },
 ];
 
 const createInitialContent = async () => {
-  await insertInitialProducts();
+  try {
+    let config = await initialConfigModel.findOne();
+    if (!config) {
+      config = new initialConfigModel();
+    }
+    if (!config.initialProductsInserted) {
+        insertInitialProducts(mockProducts);
+        config.initialProductsInserted = true;
+        console.log("Initial products inserted successfully");
+    }
+    /*if (!config.initialUsersInserted) {
+        insertInitialProducts(mockUsers);
+        config.initialUsersInserted = true;
+        console.log("Initial users inserted successfully");
+    }*/
+    config.save()
+  } catch (error) {
+    console.error("Error inserting initial data");
+    
+  }
 };
 
 module.exports = {
