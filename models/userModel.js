@@ -13,6 +13,11 @@ const userSchema = new Schema(
       required: true,
       trim: true,
     },
+    profilePictureUrl: {
+      type: String,
+      default: "",
+      trim: true,
+    },
     birthDate: {
       type: Date,
       required: true,
@@ -34,18 +39,24 @@ const userSchema = new Schema(
     dni: {
       type: String,
     },
-    products: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Product",
-    }],
-    favourites: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Product",
-    }],
-    chats: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Chat",
-    }],
+    products: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
+      },
+    ],
+    favourites: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
+      },
+    ],
+    chats: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Chat",
+      },
+    ],
     location: {
       type: {
         type: String,
@@ -64,14 +75,14 @@ const userSchema = new Schema(
       },
     },
     averageRating: {
-        type: Number,
-        min: 0,
-        max: 5,
-        default: 0,
+      type: Number,
+      min: 0,
+      max: 5,
+      default: 0,
     },
     reviewCount: {
-        type: Number,
-        default: 0,
+      type: Number,
+      default: 0,
     },
     lastAccess: {
       type: Date,
@@ -80,7 +91,7 @@ const userSchema = new Schema(
     isActive: {
       type: Boolean,
       default: true,
-    }
+    },
   },
   {
     timestamps: true,
