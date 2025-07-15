@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { createInitialContent } = require("../utils/initialData");
+const { createInitialContent } = require("../utils/mockData");
 mongoose.set("strictQuery", true);
 
 const URI_MONGODB = process.env.URL_MONGO_DB;
@@ -7,7 +7,7 @@ const URI_MONGODB = process.env.URL_MONGO_DB;
 const connectToDatabase = async () => {
   await mongoose
     .connect(URI_MONGODB)
-    .then(() => {
+    .then(async () => {
       console.log("Successfully connected to MongoDB");
       createInitialContent();
     })
