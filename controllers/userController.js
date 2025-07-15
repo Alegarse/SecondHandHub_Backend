@@ -1,6 +1,15 @@
 const userModel = require("../models/userModel");
 const sharp = require("sharp");
 
+async function insertInitialUsers(mockUsers) {
+  try {
+    await userModel.insertMany(mockUsers);
+    console.log("Products inserted successfully");
+  } catch (error) {
+    console.error(`Products insert failed: ${error.message}`);
+  }
+}
+
 // Get UserInfo After Login To access to profile
 const getUserProfile = async (req, res) => {
   try {
@@ -130,10 +139,11 @@ const removeFromFavorite = async (req, res) => {
 };
 
 module.exports = {
+  insertInitialUsers,
   getUserProfile,
   updateUserById,
   deleteUserById,
   addToFavorite,
   removeFromFavorite,
-  uploadPhotoProfile
+  uploadPhotoProfile,
 };

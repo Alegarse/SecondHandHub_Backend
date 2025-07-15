@@ -1208,11 +1208,11 @@ const createInitialContent = async () => {
         config.initialProductsInserted = true;
         console.log("Initial products inserted successfully");
     }
-    /*if (!config.initialUsersInserted) {
-        insertInitialProducts(mockUsers);
+    if (!config.initialUsersInserted) {
+        insertInitialUsers(mockUsers);
         config.initialUsersInserted = true;
         console.log("Initial users inserted successfully");
-    }*/
+    }
     config.save()
   } catch (error) {
     console.error("Error inserting initial data");
