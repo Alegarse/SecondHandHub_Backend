@@ -11,12 +11,18 @@ const app = express();
 
 connectToDatabase();
 
-app.use(cors());
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //Router for auth tasks
 app.use('/api/auth', authRouter)
 
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });
