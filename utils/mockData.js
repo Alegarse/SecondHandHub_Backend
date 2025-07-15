@@ -1114,6 +1114,89 @@ const mockProducts = [
   },
 ];
 
+const mockUsers = [
+    {
+    firstName: "Lucía",
+    lastName: "Martínez",
+    profilePictureUrl: "",
+    birthDate: new Date("1990-03-15"),
+    email: "lucia.martinez@example.com",
+    password: "$2b$10$7sCZPbEtGxgyjaJNhxBt1OOpQK3skAp7CV3lmOHc1FA5gnvPYkIku",
+    phone: "612345678",
+    dni: "12345678A",
+    location: {
+      type: "Point",
+      coordinates: [-3.7038, 40.4168], // Madrid
+      address: {
+        country: "España",
+        region: "Comunidad de Madrid",
+        province: "Madrid",
+        city: "Madrid",
+      },
+    },
+  },
+  {
+    firstName: "Carlos",
+    lastName: "Fernández",
+    profilePictureUrl: "",
+    birthDate: new Date("1985-07-20"),
+    email: "carlos.fernandez@example.com",
+    password: "$2b$10$7sCZPbEtGxgyjaJNhxBt1OOpQK3skAp7CV3lmOHc1FA5gnvPYkIku",
+    phone: "698765432",
+    dni: "87654321B",
+    location: {
+      type: "Point",
+      coordinates: [-0.3763, 39.4699], // Valencia
+      address: {
+        country: "España",
+        region: "Comunidad Valenciana",
+        province: "Valencia",
+        city: "Valencia",
+      },
+    },
+  },
+  {
+    firstName: "Marta",
+    lastName: "López",
+    profilePictureUrl: "",
+    birthDate: new Date("1992-11-02"),
+    email: "marta.lopez@example.com",
+    password: "$2b$10$7sCZPbEtGxgyjaJNhxBt1OOpQK3skAp7CV3lmOHc1FA5gnvPYkIku",
+    phone: "690123456",
+    dni: "11223344C",
+    location: {
+      type: "Point",
+      coordinates: [-5.9845, 37.3891], // Sevilla
+      address: {
+        country: "España",
+        region: "Andalucía",
+        province: "Sevilla",
+        city: "Sevilla",
+      },
+    },
+  },
+  {
+    firstName: "David",
+    lastName: "Gómez",
+    profilePictureUrl: "",
+    birthDate: new Date("1988-05-10"),
+    email: "david.gomez@example.com",
+    password: "$2b$10$7sCZPbEtGxgyjaJNhxBt1OOpQK3skAp7CV3lmOHc1FA5gnvPYkIku",
+    phone: "611223344",
+    dni: "55667788D",
+    location: {
+      type: "Point",
+      coordinates: [2.1734, 41.3851], // Barcelona
+      address: {
+        country: "España",
+        region: "Cataluña",
+        province: "Barcelona",
+        city: "Barcelona",
+      },
+    },
+  },
+]
+
 const createInitialContent = async () => {
   try {
     let config = await initialConfigModel.findOne();
