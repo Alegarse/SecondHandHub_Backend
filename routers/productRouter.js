@@ -14,8 +14,8 @@ const router = express.Router();
 router.post('/', verifyValidToken, addProduct);
 router.get('/', verifyValidToken, getAllProducts);
 router.get('/:idProduct', verifyValidToken, getProductById);
-router.patch('/:idProduct', verifyValidToken, verifyOwner, updateProductById);
-router.delete('/:idProduct', verifyValidToken, verifyOwner, deleteProductById);
+router.patch('/update/:idProduct', verifyValidToken, verifyOwner, updateProductById);
+router.delete('/delete/:idProduct', verifyValidToken, verifyOwner, deleteProductById);
 
 // Exports the router
 module.exports = router;
