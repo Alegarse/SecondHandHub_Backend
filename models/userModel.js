@@ -59,23 +59,20 @@ const userSchema = new Schema(
     ],
     location: {
       type: {
-        type: {
-          type: String,
-          enum: ["Point"],
-          default: "Point",
-        },
-        coordinates: {
-          type: [Number],
-          required: true,
-        },
-        address: {
-          country: String,
-          region: String,
-          province: String,
-          city: String,
-        },
+        type: String,
+        enum: ["Point"],
+        default: "Point",
       },
-      required: true,
+      coordinates: {
+        type: [Number],
+        required: true,
+      },
+      address: {
+        country: String,
+        region: String,
+        province: String,
+        city: String,
+      },
     },
     averageRating: {
       type: Number,
