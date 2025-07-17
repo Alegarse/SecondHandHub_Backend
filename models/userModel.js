@@ -73,6 +73,7 @@ const userSchema = new Schema(
         province: String,
         city: String,
       },
+      required: true,
     },
     averageRating: {
       type: Number,
