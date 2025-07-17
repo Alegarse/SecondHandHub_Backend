@@ -59,19 +59,21 @@ const userSchema = new Schema(
     ],
     location: {
       type: {
-        type: String,
-        enum: ["Point"],
-        default: "Point",
-      },
-      coordinates: {
-        type: [Number],
-        required: true,
-      },
-      address: {
-        country: String,
-        region: String,
-        province: String,
-        city: String,
+        type: {
+          type: String,
+          enum: ["Point"],
+          default: "Point",
+        },
+        coordinates: {
+          type: [Number],
+          required: true,
+        },
+        address: {
+          country: String,
+          region: String,
+          province: String,
+          city: String,
+        },
       },
       required: true,
     },
