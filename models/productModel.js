@@ -20,6 +20,7 @@ const productSchema = new Schema(
     },
     images: {
       type: [String],
+      required:true,
       validate: {
         validator: (val) => val.length <= 6,
         message: "Máx 6 images",
