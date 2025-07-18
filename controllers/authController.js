@@ -10,8 +10,6 @@ const signup = async (req, res) => {
       birthDate,
       email,
       password,
-      phone,
-      dni,
       location,
     } = req.body;
 
@@ -21,8 +19,6 @@ const signup = async (req, res) => {
       birthDate,
       email,
       password: await bcrypt.hash(password, 10),
-      phone,
-      dni,
       location,
     };
 
@@ -33,7 +29,7 @@ const signup = async (req, res) => {
 
       res.status(201).send({
         status: "Success",
-        message: "User created",
+        message: "User created successfully",
       });
     } else {
       res.status(409).send({
@@ -42,7 +38,7 @@ const signup = async (req, res) => {
       });
     }
   } catch (error) {
-    res.status(500).send({ status: "ERR_UNK", error: error.message });
+    res.status(500).send({ status: "ERR_REGISTER", error: error.message });
   }
 };
 
@@ -116,8 +112,13 @@ const getTokens = (req, res) => {
   }
 };
 
+const verifyToken = (req,res) => {
+  res.status(200).send({ status: "Success" });
+}
+
 module.exports = {
   signup,
   login,
   getTokens,
+  verifyToken
 };
