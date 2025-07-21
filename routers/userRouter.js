@@ -22,7 +22,7 @@ router.post(
   upload.single("profileImage"),
   uploadPhotoProfile
 );
-router.patch("/update/:idUserToUpdate", verifyValidToken, updateUserById);
+router.patch("/update", verifyValidToken, updateUserById);
 router.delete("/delete/:idUserToDelete", verifyValidToken, deleteUserById);
 
 // Favorites products endpoints from user
