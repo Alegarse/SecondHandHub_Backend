@@ -1117,6 +1117,26 @@ const mockProducts = [
 
 const mockUsers = [
   {
+    firstName: 'Alejandro',
+    lastName: 'García Serrano',
+    profilePictureUrl: '',
+    birthDate: new Date('1980-09-16'),
+    email: 'aleboy80@gmail.com',
+    password: '1234',
+    phone: '644644644',
+    dni: '12346578Z',
+    location: {
+      type: 'Point',
+      coordinates: [-4.4067, 36.7459],
+      address: {
+        country: 'España',
+        region: 'Andalucía',
+        province: 'Málaga-Costa del Sol',
+        city: 'Málaga',
+      },
+    },
+  },
+  {
     firstName: 'Lucía',
     lastName: 'Martínez',
     profilePictureUrl: '',
@@ -1198,6 +1218,12 @@ const mockUsers = [
   },
 ];
 
+const cleanedProducts = mockProducts.map(({ location, owner, ...rest }) => ({
+  ...rest,
+  owner: '',
+  lastActivatedAt: new Date(),
+}));
+
 const createInitialContent = async () => {
   try {
     let config = await initialConfigModel.findOne();
@@ -1209,7 +1235,7 @@ const createInitialContent = async () => {
       if (instUsr) config.initialUsersInserted = true;
     }
     if (!config.initialProductsInserted) {
-      const instPrd = await insertInitialProducts(mockProducts);
+      const instPrd = await insertInitialProducts(cleanedProducts);
       if (instPrd) config.initialProductsInserted = true;
     }
     await config.save();

@@ -65,23 +65,6 @@ const productSchema = new Schema(
       ref: "User",
       required: true,
     },
-    location: {
-      type: {
-        type: String,
-        enum: ["Point"],
-        default: "Point",
-      },
-      coordinates: {
-        type: [Number],
-        required: true,
-      },
-      address: {
-        country: String,
-        region: String,
-        province: String,
-        city: String,
-      },
-    },
     status: {
       type: String,
       enum: [ 'active', 'inactive', 'reserved', 'sold'],
