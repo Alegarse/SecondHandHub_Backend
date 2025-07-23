@@ -23,7 +23,7 @@ router.post(
   uploadPhotoProfile
 );
 router.patch("/update", verifyValidToken, updateUserById);
-router.delete("/delete/:idUserToDelete", verifyValidToken, deleteUserById);
+router.delete("/delete", verifyValidToken, deleteUserById);
 
 // Favorites products endpoints from user
 router.patch("/favorite/:idFavorite", verifyValidToken, addToFavorite);
