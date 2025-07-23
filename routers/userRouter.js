@@ -24,9 +24,9 @@ router.patch("/update", verifyValidToken, updateUserById);
 router.delete("/delete", verifyValidToken, deleteUserById);
 
 // Favorites products endpoints from user
-router.patch("/favorite/:idFavorite", verifyValidToken, addToFavorite);
+router.patch("/favorite/:idProduct", verifyValidToken, addToFavorite);
 router.patch(
-  "/removefavorite/:idFavorite",
+  "/removefavorite/:idProduct",
   verifyValidToken,
   removeFromFavorite
 );

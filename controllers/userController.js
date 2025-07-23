@@ -1,7 +1,7 @@
 const userModel = require('../models/userModel');
 const sharp = require('sharp');
-const bcrypt = require("bcrypt");
-const cloudinary = require('../core/utils/cloudinary');
+const bcrypt = require('bcrypt');
+const cloudinary = require('../core/utils/cloudinary')
 const fs = require('fs');
 
 async function insertInitialUsers(mockUsers) {
@@ -9,9 +9,9 @@ async function insertInitialUsers(mockUsers) {
     const usersHashedPass = await Promise.all(
       mockUsers.map(async (user) => {
         const passwordHashed = await bcrypt.hash(user.password, 10);
-        return { ...user, password: passwordHashed}
+        return { ...user, password: passwordHashed };
       })
-    )
+    );
     await userModel.insertMany(usersHashedPass);
     console.log('Initial users inserted successfully');
     return true;
@@ -53,14 +53,19 @@ const updateUserById = async (req, res) => {
 };
 
 const uploadPhotoProfile = async (req, res) => {
+  let filePath;
   try {
+    if (!req.file) {
+      return res.status(400).send({ status: 'Failed', error: 'No se subió ninguna imagen' });
+    }
+    filePath = req.file.path;
     const idUserToUpdate = req.payload._id;
-    console.log(`Id User: ${idUserToUpdate}`);
-    const result = await cloudinary.uploader.upload(req.file.path, {
+
+    const result = await cloudinary.uploader.upload(filePath, {
       folder: 'profile_pictures',
+      overwrite: true,
+      invalidate: true
     });
-    console.log("Aqui")
-    fs.unlinkSync(req.file.path);
 
     const updatedUser = await userModel.findByIdAndUpdate(
       idUserToUpdate,
@@ -68,9 +73,20 @@ const uploadPhotoProfile = async (req, res) => {
       { new: true }
     );
 
-    res.status(200).send({ status: 'Success', message: 'Imagen de perfil actualizada', imageUrl: result.secure_url });
+    res
+      .status(200)
+      .send({
+        status: 'Success',
+        message: 'Imagen de perfil actualizada',
+        imageUrl: result.secure_url,
+      });
   } catch (error) {
     res.status(500).send({ status: 'Failed', error: error.message });
+  } finally {
+    if (filePath && fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+      console.log('Archivo temporal eliminado:', filePath);
+    }
   }
 };
 
@@ -91,16 +107,16 @@ const deleteUserById = async (req, res) => {
 const addToFavorite = async (req, res) => {
   try {
     const idUser = req.payload._id;
-    const { idFavorite } = req.params;
+    const { idProduct } = req.params;
     const user = await userModel.findById(idUser);
     if (!user) {
       return res.status(200).send('There is no user with that ID');
     }
 
-    if (user.favourites.includes(idFavorite)) {
+    if (user.favorites.includes(idProduct)) {
       return res.status(200).send('This product is already in favorites');
     } else {
-      user.favourites.push(idFavorite);
+      user.favorites.push(idProduct);
       user.save();
       res.status(200).send({ status: 'Success', data: user });
     }
@@ -112,15 +128,15 @@ const addToFavorite = async (req, res) => {
 const removeFromFavorite = async (req, res) => {
   try {
     const idUser = req.payload._id;
-    const { idFavorite } = req.params;
+    const { idProduct } = req.params;
     const user = await userModel.findById(idUser);
     if (!user) {
       return res.status(200).send('There is no user with that ID');
     }
-    if (!user.favourites.includes(idFavorite)) {
+    if (!user.favorites.includes(idProduct)) {
       return res.status(200).send('This product is not in favorites');
     } else {
-      user.favourites.pull(idFavorite);
+      user.favorites.pull(idProduct);
       user.save();
       res.status(200).send({ status: 'Success', data: user });
     }
