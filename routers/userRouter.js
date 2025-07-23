@@ -1,5 +1,5 @@
 const express = require("express");
-const multer = require("multer");
+const { upload } = require('../core/middlewares/multer')
 const { verifyValidToken } = require("../core/middlewares/auth");
 const {
   getUserProfile,
@@ -12,14 +12,12 @@ const {
 
 const router = express.Router();
 
-const upload = multer({ storage: multer.memoryStorage() });
-
 // User endpoints
 router.get("/profile", verifyValidToken, getUserProfile);
 router.post(
   "/profile/img",
   verifyValidToken,
-  upload.single("profileImage"),
+  upload.single("image"),
   uploadPhotoProfile
 );
 router.patch("/update", verifyValidToken, updateUserById);

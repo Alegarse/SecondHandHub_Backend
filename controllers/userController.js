@@ -1,6 +1,8 @@
 const userModel = require('../models/userModel');
 const sharp = require('sharp');
 const bcrypt = require("bcrypt");
+const cloudinary = require('../core/utils/cloudinary');
+const fs = require('fs');
 
 async function insertInitialUsers(mockUsers) {
   try {
@@ -52,41 +54,21 @@ const updateUserById = async (req, res) => {
 
 const uploadPhotoProfile = async (req, res) => {
   try {
-    if (!req.file) {
-      return res
-        .status(400)
-        .send({ status: 'Failed', message: 'Cant find the file' });
-    }
-    const validTypes = ['image/png'];
-    if (!validTypes.includes(req.file.mimetype)) {
-      return res
-        .status(400)
-        .send({ status: 'Failed', message: 'Image format invalid' });
-    }
-    let processedImageBuffer;
-    try {
-      processedImageBuffer = await sharp(req.file.buffer)
-        .resize({ width: 150, withoutEnlargement: true })
-        .png()
-        .toBuffer();
-    } catch (sharpError) {
-      return res.status(400).send({
-        status: 'Failed',
-        message: 'This file is not a valid image',
-      });
-    }
+    const idUserToUpdate = req.payload._id;
+    console.log(`Id User: ${idUserToUpdate}`);
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: 'profile_pictures',
+    });
+    console.log("Aqui")
+    fs.unlinkSync(req.file.path);
 
-    const base64Image =
-      'data:image/png;base64,' + processedImageBuffer.toString('base64');
+    const updatedUser = await userModel.findByIdAndUpdate(
+      idUserToUpdate,
+      { profilePictureUrl: result.secure_url },
+      { new: true }
+    );
 
-    const idUser = req.payload._id;
-    const updateUser = { profilePictureUrl: base64Image };
-    const user = await userModel.findByIdAndUpdate(idUser, updateUser);
-    if (!user) {
-      return res.status(200).send("Can't find this user");
-    }
-
-    res.status(200).send({ status: 'Success', data: base64Image });
+    res.status(200).send({ status: 'Success', message: 'Imagen de perfil actualizada', imageUrl: result.secure_url });
   } catch (error) {
     res.status(500).send({ status: 'Failed', error: error.message });
   }
