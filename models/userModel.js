@@ -39,12 +39,6 @@ const userSchema = new Schema(
     dni: {
       type: String,
     },
-    products: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
-      },
-    ],
     favorites: [
       {
         type: mongoose.Schema.Types.ObjectId,
