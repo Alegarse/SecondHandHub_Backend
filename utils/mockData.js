@@ -1121,7 +1121,7 @@ const mockUsers = [
     lastName: 'García Serrano',
     profilePictureUrl: '',
     birthDate: new Date('1980-09-16'),
-    email: 'usuario1@secondhandhub.com',
+    email: 'user1@shhub.com',
     password: '1234',
     phone: '644644644',
     dni: '12346578Z',
@@ -1141,7 +1141,7 @@ const mockUsers = [
     lastName: 'Martínez',
     profilePictureUrl: '',
     birthDate: new Date('1990-03-15'),
-    email: 'usuario2@secondhandhub.com',
+    email: 'user2@shhub.com',
     password: '1234',
     phone: '612345678',
     dni: '12345678A',
@@ -1161,7 +1161,7 @@ const mockUsers = [
     lastName: 'Fernández',
     profilePictureUrl: '',
     birthDate: new Date('1985-07-20'),
-    email: 'usuario3@secondhandhub.com',
+    email: 'user3@shhub.com',
     password: '1234',
     phone: '698765432',
     dni: '87654321B',
@@ -1181,7 +1181,7 @@ const mockUsers = [
     lastName: 'López',
     profilePictureUrl: '',
     birthDate: new Date('1992-11-02'),
-    email: 'usuario4@secondhandhub.com',
+    email: 'user4@shhub.com',
     password: '1234',
     phone: '690123456',
     dni: '11223344C',
@@ -1201,7 +1201,7 @@ const mockUsers = [
     lastName: 'Gómez',
     profilePictureUrl: '',
     birthDate: new Date('1988-05-10'),
-    email: 'usuario5@secondhandhub.com',
+    email: 'user5@shhub.com',
     password: '1234',
     phone: '611223344',
     dni: '55667788D',
@@ -1229,6 +1229,8 @@ const createInitialContent = async () => {
     let config = await initialConfigModel.findOne();
     if (!config) {
       config = new initialConfigModel();
+      console.log("=======================================\n")
+      console.log("  CONFIGURING ENTORN FOR FIRST USE...\n")
     }
     if (!config.initialUsersInserted) {
       const instUsr = await insertInitialUsers(mockUsers);
