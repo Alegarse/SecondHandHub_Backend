@@ -14,10 +14,6 @@ async function insertInitialProducts(mockProducts) {
       };
     });
     await productModel.insertMany(productsWithOwners);
-    console.log('\n# Initial products inserted successfully #\n');
-    console.log('\n# TIP: #');
-    console.log('\n- All mocked porducts are relationes \nwith previous registered users #\n');
-    console.log('#         ENJOY          #');
     return true;
   } catch (error) {
     console.error(`Initial pooducts insert failed: ${error.message}`);
@@ -41,7 +37,7 @@ const addProduct = async (req, res) => {
   try {
     const newProduct = req.body;
     await productModel.create(newProduct);
-    res.status(200).send('Product upload successfully');
+    res.status(200).send({ status: 'Success', message: 'Product upload successfully' });
   } catch (error) {
     res.status(500).send({ status: 'Failed', message: error.message });
   }

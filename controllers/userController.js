@@ -13,11 +13,6 @@ async function insertInitialUsers(mockUsers) {
       })
     );
     await userModel.insertMany(usersHashedPass);
-    console.log('# Initial users inserted successfully #\n');
-    console.log(" You can use this users mocked:")
-    for(let i = 1; i < 6; i++) {
-      console.log(` - User: user${i}; Pass: 1234`)
-    }
     return true;
   } catch (error) {
     console.error(`Initial users insert failed: ${error.message}`);

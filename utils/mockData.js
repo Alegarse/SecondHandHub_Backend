@@ -1229,8 +1229,6 @@ const createInitialContent = async () => {
     let config = await initialConfigModel.findOne();
     if (!config) {
       config = new initialConfigModel();
-      console.log("=======================================\n")
-      console.log("  CONFIGURING ENTORN FOR FIRST USE...\n")
     }
     if (!config.initialUsersInserted) {
       const instUsr = await insertInitialUsers(mockUsers);
@@ -1241,8 +1239,10 @@ const createInitialContent = async () => {
       if (instPrd) config.initialProductsInserted = true;
     }
     await config.save();
+    return true
   } catch (error) {
     console.error('Error inserting initial data', error);
+    return false
   }
 };
 
