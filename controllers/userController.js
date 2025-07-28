@@ -3,6 +3,7 @@ const sharp = require('sharp');
 const bcrypt = require('bcrypt');
 const cloudinary = require('../core/utils/cloudinary')
 const fs = require('fs');
+const productModel = require('../models/productModel');
 
 async function insertInitialUsers(mockUsers) {
   try {
@@ -97,7 +98,9 @@ const deleteUserById = async (req, res) => {
     if (!user) {
       res.status(200).send("Can't find this user");
     }
-    res.status(200).send({ status: 'Success', message: 'Usuario Eliminado' });
+    await productModel.deleteMany({ owner: idUserToDelete})
+    
+    res.status(200).send({ status: 'Success', message: 'Usuario y productos asociados eliminados' });
   } catch (error) {
     res.status(500).send({ status: 'Failed', error: error.message });
   }
