@@ -19,15 +19,15 @@ const verifyValidToken = (req, res, next) => {
   }
 };
 
-const verifyOwner = (req, res, next) => {
+const verifyOwner = async (req, res, next) => {
   const token = req.header("auth-token");
   const { idProduct } = req.params;
-  const idOwnerByIdProduct = getOwnerByProductId(idProduct)
+  const idOwnerByIdProduct = await getOwnerByProductId(idProduct)
   try {
     const payload = jwt.verify(token, process.env.SECRET_TOKEN);
     const idOwner = payload._id;
     req.payload = payload;
-    if (idOwner !== idOwnerByIdProduct) {
+    if (String(idOwner) !== String(idOwnerByIdProduct)) {
       return res
         .status(401)
         .send("Access allowed only to the product owner");
@@ -38,7 +38,7 @@ const verifyOwner = (req, res, next) => {
       const payload = jwt.verify(token, process.env.SECRET_TOKEN_REFRESH);
       const idOwner = payload._id;
       req.payload = payload;
-      if (idOwner !== idOwnerByIdProduct) {
+      if (String(idOwner) !== String(idOwnerByIdProduct)) {
       return res
         .status(401)
         .send("Access allowed only to the product owner");
