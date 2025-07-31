@@ -119,7 +119,6 @@ const verifyToken = (req,res) => {
 }
 
 const verifyMail = async (req, res) => {
-  console.log("aqui");
   try {
     const {
       email,

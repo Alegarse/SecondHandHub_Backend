@@ -82,7 +82,6 @@ const updateProductById = async (req, res) => {
 const deleteProductById = async (req, res) => {
   try {
     const { idProduct } = req.params;
-    console.log(`Into delete product: ${idProduct}`)
     const deletedProduct = await productModel.findByIdAndDelete(idProduct);
     if (!deletedProduct) {
       return res.status(200).send("Can't find any product by that ID");
